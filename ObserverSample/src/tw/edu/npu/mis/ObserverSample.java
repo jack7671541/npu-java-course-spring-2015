@@ -34,16 +34,21 @@ import java.util.List;
  * @author Samael Wang <freesamael@gmail.com>
  */
 public class ObserverSample {
-
+/**
+ * Window,Model,Controller,ArrayList (new object)
+ * Each view  to Register window and model
+ * run  window object
+ */
     public static void main(String[] args) {
         // Initialize MVC and Window objects.
         Window window = new Window();
         Model model = new Model();
         Controller controller = new Controller(model);
-        List<View> views = new ArrayList<>();
-        views.add(new View("View 1", window, model));
-        views.add(new View("View 2", window, model));
-        views.add(new View("View 3", window, model));
+        List<Showable> views = new ArrayList<>();
+        views.add((Showable) new View("View 1", window, model));
+        views.add((Showable) new View("View 2", window, model));
+        views.add((Showable) new View("View 3", window, model));
+       
 
         // Start the event loop.
         window.startEventLoop(controller, views);

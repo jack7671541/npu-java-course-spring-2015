@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015, Samael Wang <freesamael@gmail.com>
+ * Copyright (c) 2015, user
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -25,34 +25,9 @@
  */
 package tw.edu.npu.mis;
 
-import java.util.Scanner;
-
 /**
- * {@link Controller} retrieves inputs from the user.
- * 有鍵盤傳入值方法 readInput
- * @author Samael Wang <freesamael@gmail.com>
+ * add new method onDraw
  */
-public class Controller {
-
-    private final Model mModel;
-     /**
-     * 建構值
-     * @param model 傳入Model類別
-     */
-    public Controller(Model model) {
-        mModel = model;
-    }
-
-    /**
-     * Read input and update model accordingly.
-     */
-    public void readInput() {
-        System.out.print("Controller: ");
-        Scanner s = new Scanner(System.in);
-        String input = s.nextLine().trim();
-        if (!input.isEmpty()) {
-            mModel.setData(input);
-        }
-    }
-
+public interface Showable {
+     void onDraw();
 }

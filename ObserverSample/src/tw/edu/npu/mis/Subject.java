@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015, Samael Wang <freesamael@gmail.com>
+ * Copyright (c) 2015, STP
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -25,34 +25,34 @@
  */
 package tw.edu.npu.mis;
 
-import java.util.Scanner;
+import java.util.ArrayList;
 
 /**
- * {@link Controller} retrieves inputs from the user.
- * 有鍵盤傳入值方法 readInput
- * @author Samael Wang <freesamael@gmail.com>
+ *
+ * @author STP
  */
-public class Controller {
-
-    private final Model mModel;
-     /**
-     * 建構值
-     * @param model 傳入Model類別
-     */
-    public Controller(Model model) {
-        mModel = model;
-    }
-
+public class Subject {
+    ArrayList<Observer> arraylist = new ArrayList();
     /**
-     * Read input and update model accordingly.
+     * Add View to ArrayList
+     * @param o 
      */
-    public void readInput() {
-        System.out.print("Controller: ");
-        Scanner s = new Scanner(System.in);
-        String input = s.nextLine().trim();
-        if (!input.isEmpty()) {
-            mModel.setData(input);
+    void Add(Observer o){
+        arraylist.add(o);
+    }
+    /**
+     * Remove View form ArrayList
+     * @param o 
+     */
+    void reMove(Observer o){
+        arraylist.remove(o);
+    }
+    /**
+     * Notify each view to update
+     */
+    void notifycation(){
+        for(Observer o : arraylist){
+            o.update();
         }
     }
-
 }
