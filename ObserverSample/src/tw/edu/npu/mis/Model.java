@@ -27,16 +27,16 @@ package tw.edu.npu.mis;
 
 /**
  * The domain model.
- *儲存內容屬性 mData
+ *
  * @author Samael Wang <freesamael@gmail.com>
  */
-public class Model {
+public class Model extends Subject {
 
     private String mData;
-
+    
     /**
      * Get model content.
-     *傳出內容
+     *
      * @return {@link String}
      */
     public String getData() {
@@ -45,15 +45,12 @@ public class Model {
 
     /**
      * Update model.
-     *寫入內容
+     *
      * @param data A {@link String} data.
      */
     public void setData(String data) {
         mData = data;
-    }
-
-    void attach(View aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        notifycation();
     }
 
 }

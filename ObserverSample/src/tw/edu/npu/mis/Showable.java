@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015, user
+ * Copyright (c) 2015, STP
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -26,8 +26,12 @@
 package tw.edu.npu.mis;
 
 /**
- * add new method onDraw
+ *
+ * @author STP
  */
 public interface Showable {
-     void onDraw();
+    /**
+     * View onDrow Print Data
+     */
+    void onDraw();
 }

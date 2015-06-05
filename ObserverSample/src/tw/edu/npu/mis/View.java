@@ -26,21 +26,27 @@
 package tw.edu.npu.mis;
 
 /**
- *  use interface Observer,Showable
+ * {@link View} generates outputs to the user.
  *
- * Declare s,mName,mWindow,mModel
+ * @author Samael Wang <freesamael@gmail.com>
  */
-public class View {
-    String s = "";
+public class View implements Observer,Showable {
+
     private final String mName;
     private final Window mWindow;
     private final Model mModel;
 
+    /**
+     * View Class Construtor
+     * @param name
+     * @param window
+     * @param model 
+     */
     public View(String name, Window window, Model model) {
         mName = name;
         mWindow = window;
         mModel = model;
-        mModel.attach(this);
+        mModel.Add(this);
     }
 
     /**
@@ -54,11 +60,11 @@ public class View {
      * Show the content of the model on the console.
      */
     public void onDraw() {
-        if(!s.equals(mModel.getData())) System.out.println("View (" + mName + "): " + mModel.getData());   
-      s = mModel.getData();
+        System.out.println("View (" + mName + "): " + mModel.getData());
     }
-    
-     public void upDate() {
+
+    @Override
+    public void update() {
         invalidate();
     }
 

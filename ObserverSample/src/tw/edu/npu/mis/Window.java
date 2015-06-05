@@ -30,28 +30,29 @@ import java.util.List;
 
 /**
  * Simulate Window objects in GUI toolkits.
- *加入顯示排程的方法 schduleRedraw
+ *
  * @author Samael Wang <freesamael@gmail.com>
  */
 public class Window {
 
     private Controller mController;
-    private List<View> mInvalidViews;
+    private List<Showable> mInvalidViews;
+    
 
     /**
      * Start the event loop.
-     *偵測controller是否有輸入
+     *
      * @param c The controller.
      * @param views The views to draw on the first loop.
      */
-    public void startEventLoop(Controller c) {
+    public void startEventLoop(Controller c, List<Showable> views) {
         mController = c;
-       
+        mInvalidViews = new ArrayList<>(views);
 
         // Simulate how an event loop works.
         while (true) {
             mController.readInput();
-            for (View v : mInvalidViews) {
+            for (Showable v : mInvalidViews) {
                 v.onDraw();
             }
             mInvalidViews.clear();
@@ -60,16 +61,12 @@ public class Window {
 
     /**
      * Add a view to a queue for redraw on screen later.
-     *加入顯示排程
+     *
      * @param v View to redraw.
      */
-    public void schduleRedraw(View v) {
-        mInvalidViews.add(v);
+    public void schduleRedraw(Showable s) {
+        if(!mInvalidViews.contains(s)){
+            mInvalidViews.add(s);
+        }
     }
-
-    void startEventLoop(Controller controller, List<Showable> views) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
 }
