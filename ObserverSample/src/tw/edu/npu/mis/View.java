@@ -26,9 +26,9 @@
 package tw.edu.npu.mis;
 
 /**
- * {@link View} generates outputs to the user.
+ *  use interface Observer,Showable
  *
- * @author Samael Wang <freesamael@gmail.com>
+ * Declare s,mName,mWindow,mModel
  */
 public class View implements Observer,Showable {
 

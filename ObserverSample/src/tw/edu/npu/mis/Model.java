@@ -37,15 +37,17 @@ public class Model extends Subject {
     /**
      * Get model content.
      *
+     *傳出內容
      * @return {@link String}
      */
     public String getData() {
         return mData;
     }
 
-    /**
+   /**
      * Update model.
      *
+     *寫入內容
      * @param data A {@link String} data.
      */
     public void setData(String data) {

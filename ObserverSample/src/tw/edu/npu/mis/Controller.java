@@ -32,12 +32,19 @@ import java.util.Scanner;
  *
  * @author Samael Wang <freesamael@gmail.com>
  */
+/**
+ * {@link Controller} retrieves inputs from the user.
+ *
+ * 有鍵盤傳入值方法 readInput
+ * @author Samael Wang <freesamael@gmail.com>
+ */
 public class Controller {
 
     private final Model mModel;
-    /**
-     * Controller Class Contrutor
-     * @param model 
+
+     /**
+     * 建構值
+     * @param model 傳入Model類別
      */
     public Controller(Model model) {
         mModel = model;

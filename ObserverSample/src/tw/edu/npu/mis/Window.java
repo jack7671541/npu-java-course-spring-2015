@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * Simulate Window objects in GUI toolkits.
  *
- * @author Samael Wang <freesamael@gmail.com>
+ *加入顯示排程的方法 schduleRedraw
  */
 public class Window {
 
@@ -42,6 +42,7 @@ public class Window {
     /**
      * Start the event loop.
      *
+     *偵測controller是否有輸入
      * @param c The controller.
      * @param views The views to draw on the first loop.
      */
@@ -62,6 +63,7 @@ public class Window {
     /**
      * Add a view to a queue for redraw on screen later.
      *
+     *加入顯示排程
      * @param v View to redraw.
      */
     public void schduleRedraw(Showable s) {
