@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015, user
+ * Copyright (c) 2015, STP
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -25,13 +25,45 @@
  */
 package tw.edu.npu.mis;
 
-import java.util.Observable;
-import java.util.Observer;
-
 /**
+ *
+ * @author STP
  */
 public class AlternativeView implements Observer,Showable {
 
-   
-}
+    private final String mName;
+    private final Window mWindow;
+    private final Model mModel;
+    /**
+     * AlternativeView Class Construtor
+     * @param name
+     * @param window
+     * @param model 
+     */
+    public AlternativeView(String name, Window window, Model model) {
+        mName = name;
+        mWindow = window;
+        mModel = model;
+        mModel.Add(this);
+    }
 
+    /**
+     * Invalidate the view, which indicates it needs to be redrawn later.
+     */
+    private void invalidate() {
+        mWindow.schduleRedraw(this);
+    }
+
+    /**
+     * Show the content of the model on the console.
+     */
+    public void onDraw() {
+        System.out.println("AlternativeView (" + mName + "): " + new StringBuilder(mModel.getData()).reverse());
+    }
+
+    @Override
+    public void update() {
+        invalidate();
+    }
+
+}
