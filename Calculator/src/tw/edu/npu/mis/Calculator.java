@@ -9,8 +9,13 @@ package tw.edu.npu.mis;
  * The model class of the calculator application.
  */
 public class Calculator  extends java.util.Observable{
+    /**
+     * @宣告各種變數
+     */
     String Mata = "",j;
-    int c ,d;
+    double c ,d;
+
+   
     
     /**
      * The available operators of the calculator.
@@ -32,20 +37,38 @@ public class Calculator  extends java.util.Observable{
         MEM_SET,     // MS
         MEM_PLUS,    // M+
         MEM_MINUS,   // M-
-        MEM_RECALL   // MR
+        MEM_RECALL,   // MR
+        Back           // ←
     }
     
+    /**
+     * @param digit 每次使用者按下0~9的數字鍵
+     */
     public void appendDigit(int digit) {
         // TODO code application logic here
         Mata += String.valueOf(digit);
         getDisplay();
     }
     
-    public void appendDot() {
+     /**
+     * 使用者按小數點的按鈕，新增小數點
+     */
+    public void appendDot(String dot) {
         // TODO code application logic here
+         if(Mata.indexOf(".")>0)
+        {
+            
+        }else
+        {
+           Mata  += dot;
+           getDisplay(); 
+        } 
         
     }
-    
+     /**
+     * 所有的邏輯運算
+     * @param operator 運算符號
+     */
     public void performOperation(Operator operator) {
         // TODO code application logic here
           switch (operator) {
@@ -76,11 +99,40 @@ public class Calculator  extends java.util.Observable{
                Mata = "";
                getDisplay();
                  break;
-              case  PLUS_MINUS:
-                c = Integer.parseInt(Mata);
-               Mata = "";
-               getDisplay();
-               j = "+/-";
+             case  PLUS_MINUS:
+                
+                {
+                    if(j == "")
+                        {
+                 
+                        }else    
+             {
+                 if(Double.parseDouble( Mata)>0)
+                  {          
+                       Mata = "-"+  Mata;
+                       getDisplay();
+                  }else{
+                        Mata=  String.valueOf(Math.abs(Double.parseDouble( Mata))) ;
+                        if( Mata.indexOf(".0")== Mata.length()-2)
+                        {
+                             Mata =  String.valueOf((int)Math.abs(Double.parseDouble( Mata))) ;
+                            getDisplay();
+                        }                
+                  }   
+             }
+        }
+                case  Back :
+              if(operator == Operator.Back)
+          {
+              if(Mata== "")
+              {
+                        
+              }else
+              {
+                   if(Mata.length()>0) Mata = Mata.substring(0,Mata.length()-1);
+                   getDisplay();   
+              }
+          }
             case EQUAL:
            
                 if(j == "+")
@@ -136,6 +188,7 @@ public class Calculator  extends java.util.Observable{
         if(AAAA =="c") performOperation(Operator.CLEAR);  
         if(AAAA =="=") performOperation(Operator.EQUAL);
          if(AAAA =="+/-") performOperation(Operator. PLUS_MINUS);
+          if(AAAA =="←") performOperation(Operator. Back);
     }
          /**
      * @param args the command line arguments
