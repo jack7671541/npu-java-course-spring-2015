@@ -57,6 +57,7 @@ public class NewJFrame extends javax.swing.JFrame implements java.util.Observer 
         jButton16 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
+        jButton19 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -193,6 +194,13 @@ public class NewJFrame extends javax.swing.JFrame implements java.util.Observer 
             }
         });
 
+        jButton19.setText("←");
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -242,7 +250,9 @@ public class NewJFrame extends javax.swing.JFrame implements java.util.Observer 
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton12)))))
+                                .addComponent(jButton12)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton19)))))
                 .addContainerGap(179, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -275,7 +285,8 @@ public class NewJFrame extends javax.swing.JFrame implements java.util.Observer 
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton10)
                     .addComponent(jButton11)
-                    .addComponent(jButton12))
+                    .addComponent(jButton12)
+                    .addComponent(jButton19))
                 .addContainerGap(111, Short.MAX_VALUE))
         );
 
@@ -358,43 +369,56 @@ public class NewJFrame extends javax.swing.JFrame implements java.util.Observer 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
         OB.aa(jButton14.getText());
+        jButton14.setFont(new Font("Consolas", Font.BOLD, 32));
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
          OB.aa(jButton13.getText());
+         jButton13.setFont(new Font("Consolas", Font.BOLD, 32));
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
         OB.aa(jButton15.getText());
+        jButton15.setFont(new Font("Consolas", Font.BOLD, 32));
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
          OB.aa(jButton16.getText());
+         jButton16.setFont(new Font("Consolas", Font.BOLD, 32));
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         // TODO add your handling code here:
         OB.aa(jButton17.getText());
+        jButton17.setFont(new Font("Consolas", Font.BOLD, 32));
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
         OB.aa(jButton12.getText());
+        jButton12.setFont(new Font("Consolas", Font.BOLD, 32));
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // TODO add your handling code here:
         OB.aa(jButton18.getText());
+        jButton18.setFont(new Font("Consolas", Font.BOLD, 32));
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
         jButton11.setFont(new Font("Consolas", Font.BOLD, 32));
-        OB. appendDot(Integer.parseInt(jButton11.getText()));
+        OB. appendDot(jButton11.getText());
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        // TODO add your handling code here:
+        OB.aa(jButton19.getText());
+        jButton19.setFont(new Font("Consolas", Font.BOLD, 32));
+    }//GEN-LAST:event_jButton19ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -416,6 +440,7 @@ public class NewJFrame extends javax.swing.JFrame implements java.util.Observer 
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
