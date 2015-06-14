@@ -78,7 +78,7 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jButton12" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton19" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton20" min="-2" pref="66" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -121,7 +121,7 @@
                   <Component id="jButton10" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton11" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton12" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton19" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton20" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="111" max="32767" attributes="0"/>
           </Group>
@@ -278,12 +278,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton18ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton19">
+    <Component class="javax.swing.JButton" name="jButton20">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x2190;"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton19ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton20ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
