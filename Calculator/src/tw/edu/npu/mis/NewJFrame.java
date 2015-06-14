@@ -393,7 +393,7 @@ public class NewJFrame extends javax.swing.JFrame implements java.util.Observer 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
         jButton11.setFont(new Font("Consolas", Font.BOLD, 32));
-        OB. appendDot(Integer.parseInt(jButton11.getText()));
+        OB. appendDot(jButton11.getText());
     }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
